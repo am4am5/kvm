@@ -1,0 +1,16 @@
+--- # start vm
+- hosts: local
+  become: yes
+  gather_facts: no
+
+  tasks:
+  - name: start all vm
+    virt:
+      name: "{{ item }}"
+      state: running
+    with_items:
+      - control1
+      - control2
+      - worker1
+      - worker2
+      - lb

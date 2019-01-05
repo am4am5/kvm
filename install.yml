@@ -1,0 +1,11 @@
+--- # dnf update
+- hosts: control
+  remote_user: am4
+  become: yes
+  gather_facts: no
+
+  tasks:
+  - name: dnf install %package%
+    dnf:
+      name: "kubectl"
+      state: latest

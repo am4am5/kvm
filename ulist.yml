@@ -1,0 +1,11 @@
+--- # dnf list updated
+- hosts: all
+  remote_user: am4
+  become: yes
+  gather_facts: no
+  
+  tasks:
+  - name: list updated
+    shell: "dnf history info | awk '{print $2}'"
+    register: up
+  - debug: msg="{{up.stdout_lines}}"
