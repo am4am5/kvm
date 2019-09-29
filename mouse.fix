@@ -1,0 +1,1 @@
+sudo virt-xml belkali --add-device --input tablet
