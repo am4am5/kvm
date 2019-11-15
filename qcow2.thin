@@ -1,0 +1,1 @@
+qemu-img create -f qcow2 centos.qcow2 20G
